@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{url_for('static', filename='css/app.css')}}">
+    <title>Contact</title>
+</head>
+<body>
+    {%extends 'base.html'%}
+    {%block main%}
+    <h1>Contact Form</h1>
+    <hr>
+    <p>Fill in this form to contact the site owners</p>
+    <form action="{{url_for('contact')}}" method="POST">
+        {{form.csrf_token}}
+            
+        <fieldset class="fields">
+            <div class="labels">
+                {{form.name.label}} <p class="required">{{'(Required)' if form.name.flags.required}}</p>
+            </div>
+            <p>Please enter your full name.</p>
+            {{form.name}}
+        </fieldset>
+        
+        <fieldset class="fields">
+            <div class="labels">{{form.email.label}} <p class="required">{{'(Required)' if form.email.flags.required}}</p></div>
+            <p>Please enter your e-mail address.</p>
+            {{form.email}}
+        </fieldset>
+        
+        <fieldset class="fields">
+            <div class="labels">{{form.subject.label}} 
+                <p class="required">{{'(Required)' if form.subject.flags.required}}</p></div>
+            <p>Please enter the subject for your message.</p>
+            {{form.subject}}
+        </fieldset>
+        
+        <fieldset class="fields">
+            <div class="labels">
+                {{form.message.label}} <p class="required">{{'(Required)' if form.message.flags.required}}</p>
+            </div>
+            <p>Please enter the message you would like to send.</p>
+            {{form.message}}
+        </fieldset>
+        <div class="fields">
+            {{form.submit(class="sendBtn")}}
+        </div>
+       
+    </form>
+    
+    {%endblock%}
+</body>
+</html>

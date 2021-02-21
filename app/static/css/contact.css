@@ -1,20 +1,6 @@
-body {
-    padding-top: 5rem;
-}
-
-.flashes{
-    list-style-type: none;
-    margin: 0;
-    padding:0;
-    font-weight: bold;
-    font-size: 20px;
-    color: blue;   
-}
-
 label{
     font-weight: bold;
     font-size: 20px;
-    display: inline-block;
 }
 
 input{
@@ -29,6 +15,9 @@ p{
     font-size: 18px;
 }
 
+.control-label{
+    color: pink;   
+}
 
 textarea{
     width: 50%;
@@ -54,16 +43,4 @@ textarea{
 
 .fields{
     margin: 20 0 20 0;
-}
-
-/* .labels{
-    display: flex;
-    justify-content: space-between;
-    width: 150px;
-} */
-
-.required{
-    color: red;
-    display: inline-block;
-    font-weight: bold;
 }
